@@ -8,7 +8,7 @@ const fs = require("fs");
 const exampleData = fs.readFileSync("./example.json");
 const project = JSON.parse(exampleData);
 const audioElements = project.audio_blocks;
-
+let PORT=5000
 
 // Add Audio Element
 
@@ -117,8 +117,8 @@ app.get("/audio-fragments/:start/:end", (req, res) => {
 });
 
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+  console.log(`server running at ${PORT}`);
 });
 
 
